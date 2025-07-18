@@ -1,0 +1,64 @@
+package sqa.main;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class Normal {
+	
+	Ranking rank = new Ranking();
+	
+	@Test
+	void TC01_Standard() {
+		assertEquals("Standard",rank.CalculateMembershipRank(0, 16, 500));
+	}
+	@Test
+	void TC02_Standard() {
+		assertEquals("Standard",rank.CalculateMembershipRank(1, 16, 500));
+	}
+	@Test
+	void TC03_Standard() {
+		assertEquals("Gold",rank.CalculateMembershipRank(50000, 16, 500));
+	}
+	@Test
+	void TC04_Standard() {
+		assertEquals("Gold",rank.CalculateMembershipRank(99999, 16, 500));
+	}
+	@Test
+	void TC05_Standard() {
+		assertEquals("Platinum",rank.CalculateMembershipRank(100000, 16, 500));
+	}
+	@Test
+	void TC06_Standard() {
+		assertEquals("Standard",rank.CalculateMembershipRank(50000, 0, 500));
+	}
+	@Test
+	void TC07_Standard() {
+		assertEquals("Silver",rank.CalculateMembershipRank(50000, 1, 500));
+	}
+	@Test
+	void TC08_Standard() {
+		assertEquals("Gold",rank.CalculateMembershipRank(50000, 30, 500));
+	}
+	@Test
+	void TC09_Standard() {
+		assertEquals("Gold",rank.CalculateMembershipRank(50000, 31, 500));
+	}
+	@Test
+	void TC10_Standard() {
+		assertEquals("Standard",rank.CalculateMembershipRank(50000, 16, 0));
+	}
+	@Test
+	void TC11_Standard() {
+		assertEquals("Standard",rank.CalculateMembershipRank(50000, 16, 1));
+	}
+	@Test
+	void TC12_Standard() {
+		assertEquals("Gold",rank.CalculateMembershipRank(50000, 16, 999));
+	}
+	@Test
+	void TC13_Standard() {
+		assertEquals("Gold",rank.CalculateMembershipRank(50000, 16, 1000));
+	}
+
+}
